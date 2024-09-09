@@ -1,0 +1,39 @@
+.dogs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dog{
+    background-color: gray;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.hero{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border-radius: 5px;
+    background-image: url(hero.jpg);
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    width: 600px;
+    gap: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 50px;
+}
