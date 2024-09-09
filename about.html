@@ -18,15 +18,54 @@
     <link rel="stylesheet" href="./style.css" />
     <script>
         window.addEventListener("DOMContentLoaded",()=>{
-
-            
-
+            en = document.getElementById("error-name");
+            ee = document.getElementById("error-email");
+            ep = document.getElementById("error-phone");
+            en.style.display = "none";
+            ee.style.display = "none";
+            ep.style.display = "none";
+            const name = document.getElementById("name")
+            const phone = document.getElementById("number")
+            const email =document.getElementById("email")
             document.getElementById("submit").addEventListener("click",handle)
             function handle(){
-            
+                validateEmail();
+                validatePhone();
+                validateName();
             }
+
+            function validateEmail() {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            ee.style.display = "block";
+        } else {
+            ee.style.display = "none";
+        }
+    }
+
+    function validateName() {
+       
+       if (name.value.trim === ""){
+        en.style.display = "block"
+       }else{
+        en.style.display = "none";
+       }
+    }
+        
+    
+
+
+    function validatePhone() {
+       numPattern = /^\d{10}$/
+       if (!numPattern.test(phone.value)){
+        ep.style.display = "block"
+       }else{
+        ep.style.display = "none";
+       }
+    }
         })
     </script>
+   
   </head>
   <body>
     <nav
@@ -37,6 +76,7 @@
           >Home</a
         >
         <a class="nav-item nav-link active" href="">About Us</a>
+        <a class="nav-item nav-link" href="github.html">Github</a>
       </div>
     </nav>
     <header class="p-5 m-5 hero">
@@ -51,18 +91,18 @@
       <div class="col-md-10">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" value="" required />
-        <label for="name" class="error visually-hidden">Please enter a valid name</label>
+        <label for="name" id="error-name" class="error">Please enter a valid name</label>
       </div>
       <div class="col-md-10">
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com"
         required />
-        <label for="email" class="error visually-hidden">Please enter a valid email</label>
+        <label for="email" id="error-email" class="error">Please enter a valid email</label>
       </div>
       <div class="col-md-10 mb-4">
         <label for="number" class="form-label">Phone</label>
-        <input type="number" class="form-control" id="number" placeholder="+91xxxxxxxxxx" value="" required />
-        <label for="number" class="error visually-hidden" >Please enter a 10 digit valid number</label>
+        <input type="text" class="form-control" id="number" placeholder="+91xxxxxxxxxx" value="" required />
+        <label for="text" id="error-phone" class="error" >Please enter a 10 digit valid number</label>
       </div>
       <button
         type="submit"

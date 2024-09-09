@@ -7,6 +7,12 @@
     margin-top: 10px;
 }
 
+.error{
+    font-size: 1rem;
+    color: red;
+    font-weight: 700;
+}
+
 .dog{
     background-color: gray;
     font-size: 1.5rem;
@@ -14,6 +20,9 @@
     padding: 10px;
 }
 
+.details{
+    font-size: 4rem;
+}
 
 .hero{
     background-repeat: no-repeat;
